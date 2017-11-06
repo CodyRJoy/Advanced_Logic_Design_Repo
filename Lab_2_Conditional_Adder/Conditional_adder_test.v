@@ -5,29 +5,47 @@ module Conditional_adder_test;
 parameter bits = 8;
 reg [bits-1:0] xreg;
 reg [bits-1:0] yreg;
-//reg creg;
 reg modereg;
-wire [8:0] answerwire;
-//wire [1:0] rwire;
+wire [7:0] sumwire;
+wire cwire;
 
-Conditional_Adder#() Conditional_Adder_1(
+Conditional_Adder2#() Conditional_Adder_1(
     .x(xreg),
     .y(yreg),
-    //.cin(creg),
     .mode(modereg),
-    //.testanswer(testanswerwire),
-    .answer(answerwire)
-    //.r(rwire)
+    .sum(sumwire),
+    .cout(cwire)
     );
     
 initial begin
 
-xreg <= 15;
+xreg <= 127;
 yreg <= 1;
-//creg <= 1;
 modereg <= 0;
-//cinreg <= 0;
-#10;
+#100;
+xreg <= 128;
+yreg <= 127;
+modereg <= 1;
+#100;
+xreg <= 255;
+yreg <= 0;
+modereg <= 0;
+#100;
+modereg <= 1;
+#100;
+xreg <= 117;
+yreg <= 87;
+modereg <= 0;
+#100;
+modereg <= 1;
+#100;
+xreg <= 119;
+yreg <= 57;
+modereg <= 0;
+#100;
+modereg <= 1;
+#100;
+$finish;
 
 end
     
