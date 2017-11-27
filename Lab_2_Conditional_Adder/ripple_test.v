@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/02/2017 12:16:55 AM
-// Design Name: 
-// Module Name: ripple_test
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module ripple_test;
 
     
@@ -61,7 +40,7 @@ module ripple_test;
        cin <= 1;
        #100;
        x <= 117;
-       y <= 87;
+       y <= 85;
        mode <= 0;
        cin <= 0;
        #100;

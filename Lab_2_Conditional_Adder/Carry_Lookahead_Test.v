@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/01/2017 11:28:37 PM
-// Design Name: 
-// Module Name: Carry_Lookahead_Test
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module Carry_Lookahead_Test;
     
     reg [7:0] x;
@@ -41,15 +20,41 @@ module Carry_Lookahead_Test;
     
     initial
     begin
-        x<= 8'b01111111;
-        y<= 8'b00000001;
-        mode<= 0;
-        cin<= 0;
-        #100
-        x<= 8'b00000111;
-        y<= 8'b00000001;
-        mode<= 0;
-        cin<= 0;
+    x <= 127;
+    y <= 1;
+    mode <= 0;
+    cin <= 0;
+    #100;
+    x <= 128;
+    y <= 127;
+    mode <= 1;
+    cin <= 1;
+    #100;
+    x <= 255;
+    y <= 0;
+    mode <= 0;
+    cin <= 0;
+    #100;
+    mode <= 1;
+    cin <= 1;
+    #100;
+    x <= 117;
+    y <= 85;
+    mode <= 0;
+    cin <= 0;
+    #100;
+    mode <= 1;
+    cin <= 1;
+    #100;
+    x <= 119;
+    y <= 57;
+    mode <= 0;
+    cin <= 0;
+    #100;
+    mode <= 1;
+    cin <= 1;
+    #100;
+    $finish;
         
     end
   

@@ -34,7 +34,7 @@ modereg <= 0;
 modereg <= 1;
 #100;
 xreg <= 117;
-yreg <= 87;
+yreg <= 85;
 modereg <= 0;
 #100;
 modereg <= 1;
