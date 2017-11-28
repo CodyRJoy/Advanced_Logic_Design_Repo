@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/02/2017 01:46:13 AM
-// Design Name: 
-// Module Name: Babbage_Difference_Engine_Test
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module Babbage_Difference_Engine_Test;
     reg [15:0] bag3const0;
     reg [15:0] bag3const1;
@@ -62,6 +41,16 @@ module Babbage_Difference_Engine_Test;
         bag2const0 <= 5;
         bag2const1 <= 3;
         bag2const2 <= 2;
+        #20;
+        bag3const0 <= 7;
+        bag3const1 <= 5;
+        bag3const2 <= 6;
+        bag3const3 <= 3;
+        bag2const0 <= -1;
+        bag2const1 <= 2;
+        bag2const2 <= 1;
+        #20;
+        $finish;
         end
         
     

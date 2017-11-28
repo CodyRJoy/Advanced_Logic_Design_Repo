@@ -1,35 +1,9 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/02/2017 01:05:31 AM
-// Design Name: 
-// Module Name: Second_Order_Babbage
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module Second_Order_Babbage#(parameter Maxxvalue = 5)(
     input [15:0] const0,
     input [15:0] const1,
     input [15:0] const2,
-    output [15:0] position,
-    output [15:0] answer0,
-    output [15:0] answer1,
-    output [15:0] answer2,
-    output [15:0] answer3,
-    output [15:0] answer4
+    output [15:0] position
 
     );
     

@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/02/2017 02:33:39 AM
-// Design Name: 
-// Module Name: Third_Order_Babbage
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module Third_Order_Babbage#(parameter Maxxvalue = 5)(
     input [15:0] const0,
     input [15:0] const1,
