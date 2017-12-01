@@ -14,7 +14,7 @@ reg [6:0] Num_Choose; // 7 bit register to hold the binary value of each input g
 
 always @ (posedge CLK100MHZ or posedge CPU_RESETN)
  begin
-  if (CPU_RESETN)
+  if (~CPU_RESETN)
    count <= 0;
   else
    count <= count + 1;
@@ -72,7 +72,7 @@ always @ (*)
     default: Num_Choose <= 7'b0111000;
   endcase
  end
-assign {CG, CF, CE, CD, CC, CB, CA} = Num_Choose;
+assign {CA,CB,CC,CD,CE,CF,CG} = Num_Choose;
 assign AN = AN_Choose;
 assign DP = 1'b1;
 
