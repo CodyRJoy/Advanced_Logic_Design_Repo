@@ -25,25 +25,25 @@ always @ (*)
  begin
   case(count[19:17]) //using only the 2 MSB's of the counter 
    
-   3'b000 :  //When the 2 MSB's are 00 enable the fourth display
+   3'b000 :  //When the 2 MSB's are 00 enable the eighth display
     begin
      SW_Choose = {RH_Value[3],RH_Value[2],RH_Value[1],RH_Value[0]};
      AN_Choose = 8'b11111110;
     end
    
-   3'b010:  //When the 2 MSB's are 01 enable the third display
+   3'b001:  //When the 2 MSB's are 01 enable the seventh display
     begin
      SW_Choose = {RH_Value[7],RH_Value[6],RH_Value[5],RH_Value[4]};
      AN_Choose = 8'b11111101;
     end
    
-   3'b100:  //When the 2 MSB's are 10 enable the second display
+   3'b010:  //When the 2 MSB's are 10 enable the sixth display
     begin
      SW_Choose = {RH_Value[11],RH_Value[10],RH_Value[9],RH_Value[8]};
      AN_Choose = 8'b11111011;
     end
     
-   3'b110:  //When the 2 MSB's are 11 enable the first display
+   3'b011:  //When the 2 MSB's are 11 enable the fifth display
     begin
      SW_Choose = {RH_Value[15],RH_Value[14],RH_Value[13],RH_Value[12]};
      AN_Choose =8'b11110111;
