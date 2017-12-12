@@ -29,6 +29,13 @@ LEDB = 1'b0;
 
 end
 
+
+     seven_seg SSEG(
+     .RH_Value(dataBits[39:24]),
+     .Temp_Value(dataBits[23:8])
+     );
+
+
 assign JA[3] = JA3out ? 1'b1: 1'b0;
 assign LED16_R = LEDR;
 assign LED16_G = LEDG;
@@ -45,6 +52,7 @@ always @(posedge CLK100MHZ) begin
 	if(count > 32'h3B9ACA00) begin
 		count <= 32'h0;
 		state <= 8'h00;
+		
 	end
 	
 	case (state)
@@ -57,18 +65,18 @@ always @(posedge CLK100MHZ) begin
 				state <= 8'h01;
 				end
 			end
-		8'h01: begin 	// send an output pulse lasting 1ms;
+		8'h01: begin 	// send an output pulse lasting 5ms;
 						// This is the 'start' signal to the device.
-			if( count < 32'h186A0 ) begin
-			     LEDB = 1'b1;
+			if( count < 32'h18aaaa ) begin
+			     LEDB = 1'b0;
 			     LEDR = 1'b0;
 			     LEDG = 1'b0;
 				count <= count + 1;
-				JA3out <= 1'b0;
+				JA3out <= 1'b1;
 				end
 			else begin
 				count <= 0;
-                JA3out <= 1'b1;
+                JA3out <= 1'b0;
 				state <= 8'h02;
 				end
 			end
@@ -90,6 +98,7 @@ always @(posedge CLK100MHZ) begin
 			end
 		8'h04: begin // wait for bus to float high again, this is the last part of the ACK for our START command.
 			if(JA3in) begin
+                LEDB = 1'b1;
 				count <= 0;
 				state <= 8'h05;
 				dataReady <= 1'b0;
@@ -157,12 +166,10 @@ always @(posedge CLK100MHZ) begin
 				    LEDG = 1'b1;
 				    state <= 8'h00;
 				    count <= 0;
-				    // send data to be display on seven segment display
 				 end
 				 else begin
 				 state <= 8'h00;
                  count <= 0;
-                 //Don't send data to be display on seven segment display
                  end
              end
 			else count <= count +1;
